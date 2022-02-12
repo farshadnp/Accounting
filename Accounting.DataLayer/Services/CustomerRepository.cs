@@ -10,7 +10,11 @@ namespace Accounting.DataLayer.Services
 {
     public class CustomerRepository : ICustomerRepository
     {
-        Accounting_DBEntities db = new Accounting_DBEntities();
+        private Accounting_DBEntities db;
+        public CustomerRepository(Accounting_DBEntities context)
+        {
+            db = context;
+        }
 
         public bool DeleteCustomer(Customers customer)
         {
@@ -48,6 +52,12 @@ namespace Accounting.DataLayer.Services
             return db.Customers.ToList();
         }
 
+        public IEnumerable<Customers> GetCustomersByFilter(string parameter)
+        {
+            var customer = db.Customers.Where(c => c.FullName.Contains(parameter) || c.Mobile.Contains(parameter) || c.Email.Contains(parameter)).ToList();
+            return customer;
+        }
+
         public Customers GetCustomersByID(int customerId)
         {
             return db.Customers.Find(customerId);
@@ -67,10 +77,10 @@ namespace Accounting.DataLayer.Services
             }
         }
 
-        public void save()
-        {
-            db.SaveChanges();
-        }
+        //public void save()
+        //{
+        //    db.SaveChanges();
+        //}
 
         public bool UpdateCustomer(Customers customer)
         {
