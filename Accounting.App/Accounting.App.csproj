@@ -73,6 +73,36 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Validator\BaseValidator.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Validator\BaseValidator.designer.cs">
+      <DependentUpon>BaseValidator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Validator\CustomValidator.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Validator\CustomValidator.designer.cs">
+      <DependentUpon>CustomValidator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Validator\RangeValidator.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Validator\RangeValidator.designer.cs">
+      <DependentUpon>RangeValidator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Validator\RegularExpressionValidator.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Validator\RegularExpressionValidator.designer.cs">
+      <DependentUpon>RegularExpressionValidator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Validator\RequiredFieldValidator.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Validator\RequiredFieldValidator.designer.cs">
+      <DependentUpon>RequiredFieldValidator.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Customers\frmAddOrEditCustomer.resx">
       <DependentUpon>frmAddOrEditCustomer.cs</DependentUpon>
     </EmbeddedResource>
@@ -161,13 +191,19 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Accounting.DataLayer\Accounting.DataLayer.csproj">
-      <Project>{7D677F58-FA52-4698-942F-BDAB827BE974}</Project>
+      <Project>{7d677f58-fa52-4698-942f-bdab827be974}</Project>
       <Name>Accounting.DataLayer</Name>
     </ProjectReference>
     <ProjectReference Include="..\Accounting.Utility\Accounting.Utility.csproj">
       <Project>{c111e3b2-823f-40ab-9162-4df3604d81a7}</Project>
       <Name>Accounting.Utility</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\no-profile-image.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\noPhoto1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

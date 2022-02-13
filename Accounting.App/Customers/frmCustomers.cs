@@ -75,8 +75,11 @@ namespace Accounting.App
         {
             frmAddOrEditCustomer frmAddOrEdit = new frmAddOrEditCustomer();
 
-            frmAddOrEdit.ShowDialog();
-
+            //frmAddOrEdit.ShowDialog();
+            if(frmAddOrEdit.ShowDialog() == DialogResult.OK)
+            {
+                BindGrid();
+            }
         }
     }
 }
