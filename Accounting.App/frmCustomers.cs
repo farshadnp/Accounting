@@ -55,7 +55,7 @@ namespace Accounting.App
                 {
                     string FullName = DGCustomers.CurrentRow.Cells[1].Value.ToString();
                     int customerId = (int)DGCustomers.CurrentRow.Cells[0].Value;
-                    if(MessageBox.Show($"آیا از حذف {FullName} مطمئن هستید؟","Warning",MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes)
+                    if(RtlMessageBox.Show($"آیا از حذف {FullName} مطمئن هستید؟","Warning",MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         db.CustomerRepository.DeleteCustomer(customerId);
                         db.Save();
@@ -66,7 +66,7 @@ namespace Accounting.App
             }
             else
             {
-                MessageBox.Show("لطفا یک نفر را انتخاب کنید");
+                RtlMessageBox.Show("لطفا یک نفر را انتخاب کنید");
             }
         }
     }
