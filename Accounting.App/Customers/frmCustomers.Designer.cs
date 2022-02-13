@@ -35,8 +35,8 @@
             this.btnRefresh = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.txtFilter = new System.Windows.Forms.ToolStripTextBox();
-            this.DGCustomers = new System.Windows.Forms.DataGridView();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.DGCustomers = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -71,6 +71,7 @@
             this.btnNewCustomer.Size = new System.Drawing.Size(70, 59);
             this.btnNewCustomer.Text = "شخص جدید";
             this.btnNewCustomer.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnNewCustomer.Click += new System.EventHandler(this.btnNewCustomer_Click);
             // 
             // btnEditCustomer
             // 
@@ -117,6 +118,11 @@
             this.txtFilter.Size = new System.Drawing.Size(150, 62);
             this.txtFilter.TextChanged += new System.EventHandler(this.txtFilter_TextChanged);
             // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 62);
+            // 
             // DGCustomers
             // 
             this.DGCustomers.AllowUserToAddRows = false;
@@ -135,11 +141,6 @@
             this.DGCustomers.ReadOnly = true;
             this.DGCustomers.Size = new System.Drawing.Size(584, 299);
             this.DGCustomers.TabIndex = 1;
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 62);
             // 
             // Column1
             // 
