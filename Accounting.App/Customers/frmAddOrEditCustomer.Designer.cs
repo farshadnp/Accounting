@@ -156,8 +156,10 @@
             // 
             // pcCustomer
             // 
-            this.pcCustomer.ErrorImage = global::Accounting.App.Properties.Resources.noPhoto1;
+            this.pcCustomer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pcCustomer.ErrorImage = global::Accounting.App.Properties.Resources._1371476007_Close_Box_Red;
             this.pcCustomer.Image = global::Accounting.App.Properties.Resources.noPhoto1;
+            this.pcCustomer.InitialImage = global::Accounting.App.Properties.Resources.noPhoto1;
             this.pcCustomer.Location = new System.Drawing.Point(6, 20);
             this.pcCustomer.Name = "pcCustomer";
             this.pcCustomer.Size = new System.Drawing.Size(182, 202);

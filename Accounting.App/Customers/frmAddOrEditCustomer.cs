@@ -1,5 +1,6 @@
 ﻿using Accounting.DataLayer.Context;
 using System;
+using System.IO;
 using System.Windows.Forms;
 using ValidationComponents;
 
@@ -26,17 +27,28 @@ namespace Accounting.App.Customers
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            Accounting.DataLayer.Customers customer = new DataLayer.Customers()
-            {
-                FullName = txtName.Text,
-                Mobile = txtMobile.Text,
-                Email=txtEmail.Text,
-                Address = txtAddress.Text,
-                CustomerImage = "NoPhoto.jpg"
-            };
-
             if (BaseValidator.IsFormValid(this.components))
             {
+                
+                string imageName = Guid.NewGuid().ToString() + Path.GetExtension(pcCustomer.ImageLocation);
+                string path = Application.StartupPath + "/Images/";
+                if (!Directory.Exists(path))
+                {
+
+                    Directory.CreateDirectory(path);
+                }
+                pcCustomer.Image.Save(path + imageName);
+
+
+                Accounting.DataLayer.Customers customer = new DataLayer.Customers()
+                {
+                    FullName = txtName.Text,
+                    Mobile = txtMobile.Text,
+                    Email = txtEmail.Text,
+                    Address = txtAddress.Text,
+                    CustomerImage = imageName
+                };
+
                 db.CustomerRepository.insertCustomer(customer);
                 db.Save();
                 DialogResult = DialogResult.OK;
