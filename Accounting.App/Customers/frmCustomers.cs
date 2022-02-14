@@ -81,5 +81,26 @@ namespace Accounting.App
                 BindGrid();
             }
         }
+
+        private void btnEditCustomer_Click(object sender, EventArgs e)
+        {
+
+            if(DGCustomers.CurrentRow != null)
+            {
+                frmAddOrEditCustomer frmAddOrEdit= new frmAddOrEditCustomer();
+
+                int SelectedCustomerid = int.Parse(DGCustomers.CurrentRow.Cells[0].Value.ToString());
+                frmAddOrEdit.CustomerId = SelectedCustomerid;
+                if(frmAddOrEdit.ShowDialog() == DialogResult.OK)
+                {
+                    BindGrid();
+                }
+            }
+            else
+            {
+                MessageBox.Show("لطفا یک سطر را انتخاب کنید");
+            }
+            
+        }
     }
 }
